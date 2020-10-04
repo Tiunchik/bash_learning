@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+# Чтение строк файла через команду read в цикле while
+#
+COUNT=1
+#читаем файл и через pipe передаём в команду read с опцией line - это название переменой куда будут сохранятсья данные
+cat log.txt | while read LINE; do
+  echo "Line $COUNT: $LINE"
+  COUNT=$(($COUNT + 1))
+done
+echo "Finished"
